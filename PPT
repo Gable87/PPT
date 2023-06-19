@@ -1,0 +1,52 @@
+import pptx
+
+def create_presentation():
+  presentation = pptx.Presentation()
+
+  # Introduction
+  slide = presentation.slides.add_slide(presentation.slide_layouts[0])
+  title = slide.shapes.add_textbox(0, 0, 500, 50).text = "Introduction to Wild Animals"
+
+  # Animal Features Vocabulary
+  slide = presentation.slides.add_slide(presentation.slide_layouts[1])
+  title = slide.shapes.add_textbox(0, 0, 500, 50).text = "Animal Features Vocabulary"
+  table = slide.shapes.add_table(4, 4, 100, 100)
+  table.table_cells[0, 0].text = "Habitat"
+  table.table_cells[0, 1].text = "The natural environment where an animal lives"
+  table.table_cells[1, 0].text = "Diet"
+  table.table_cells[1, 1].text = "The food that an animal eats"
+  table.table_cells[2, 0].text = "Predators"
+  table.table_cells[2, 1].text = "Animals that hunt other animals for food"
+  table.table_cells[3, 0].text = "Prey"
+  table.table_cells[3, 1].text = "Animals that are hunted by other animals for food"
+  table.table_cells[4, 0].text = "Camouflage"
+  table.table_cells[4, 1].text = "Colors or patterns that help an animal blend in with its surroundings"
+  table.table_cells[5, 0].text = "Mimicry"
+  table.table_cells[5, 1].text = "When an animal looks or behaves like another animal to avoid predators"
+  table.table_cells[6, 0].text = "Adaptation"
+  table.table_cells[6, 1].text = "A physical or behavioral change that helps an animal survive in its environment"
+
+  # Animals and Their Abilities
+  slide = presentation.slides.add_slide(presentation.slide_layouts[1])
+  title = slide.shapes.add_textbox(0, 0, 500, 50).text = "Animals and Their Abilities"
+  list_items = slide.shapes.add_textbox(0, 50, 500, 50)
+  list_items.text = "How do animals see, hear, smell, and taste?\nHow do animals move around?\nHow do animals communicate with each other?"
+
+  # Comparing Animals
+  slide = presentation.slides.add_slide(presentation.slide_layouts[1])
+  title = slide.shapes.add_textbox(0, 0, 500, 50).text = "Comparing Animals"
+  list_items = slide.shapes.add_textbox(0, 50, 500, 50)
+  list_items.text = "How do different animals compare in terms of size, weight, speed, strength, and intelligence?\nWhat are some of the similarities and differences between different types of animals?"
+
+  # Conclusion
+  slide = presentation.slides.add_slide(presentation.slide_layouts[1])
+  title = slide.shapes.add_textbox(0, 0, 500, 50).text = "Conclusion"
+  list_items = slide.shapes.add_textbox(0, 50, 500, 50)
+  list_items.text = "What have we learned about wild animals today?\nHow can we help protect wild animals?"
+
+  return presentation
+
+presentation = create_presentation()
+
+# Save the presentation
+presentation.save("wild_animals.pptx")
